@@ -1,0 +1,22 @@
+{
+  "nodes": {
+    "input": { "class": "Input" },
+    "get_rand_data": { "class": "Rand" },
+    "pull_from_context": { "class": "FromContext", "options": { "key": "offset" } },
+    "sum": { "class": "Sum" },
+    "mult_by_two": { "class": "TwoX" },
+    "output": { "class": "Output" }
+
+    // "log": { "class": "Log" }
+  },
+  "edges": [
+    { "from": "input", "to": "get_rand_data" },
+    { "from": "get_rand_data", "to": "pull_from_context" },
+    { "from": "pull_from_context", "to": "sum" },
+    { "from": "sum", "to": "mult_by_two" },
+    { "from": "mult_by_two", "to": "output" }
+
+    // { "from": "get_rand_data", "to": "log" },
+    // { "from": "log", "to": "output" }
+  ]
+}
